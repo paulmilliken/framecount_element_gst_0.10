@@ -1,0 +1,3 @@
+Note: when running configure do:
+./configure --prefix=/usr
+

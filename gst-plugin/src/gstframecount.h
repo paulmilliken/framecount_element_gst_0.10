@@ -38,6 +38,10 @@ G_BEGIN_DECLS
 #define GST_IS_FRAME_COUNT_CLASS(klass) \
   (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_FRAME_COUNT))
 
+#define MIN_FRAME_COUNT 0
+#define MAX_FRAME_COUNT 2000000000
+#define DEFAULT_FRAME_COUNT 0
+
 typedef struct _Gstframecount      Gstframecount;
 typedef struct _GstframecountClass GstframecountClass;
 

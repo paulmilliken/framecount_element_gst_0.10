@@ -132,7 +132,7 @@ gst_framecount_class_init (GstframecountClass * klass)
 
   g_object_class_install_property (gobject_class, PROP_FRAME_COUNT,
     g_param_spec_int ("frame_count", "Frame count", "Number of frames since stream started",
-          0, G_PARAM_READWRITE | GST_PARAM_CONTROLLABLE));
+          MIN_FRAME_COUNT, MAX_FRAME_COUNT, DEFAULT_FRAME_COUNT, G_PARAM_READWRITE | GST_PARAM_CONTROLLABLE));
 
   GST_BASE_TRANSFORM_CLASS (klass)->transform_ip =
       GST_DEBUG_FUNCPTR (gst_framecount_transform_ip);
@@ -199,7 +199,7 @@ gst_framecount_transform_ip (GstBaseTransform * base, GstBuffer * outbuf)
     gst_object_sync_values (G_OBJECT (filter), GST_BUFFER_TIMESTAMP (outbuf));
 
   if (filter->silent == FALSE)
-    g_print ("I'm plugged, therefore I'm in.\n");
+    g_print ("Frame count is %d.\n", filter->frame_count);
   
   /* FIXME: do something interesting here.  This simply copies the source
    * to the destination. */
