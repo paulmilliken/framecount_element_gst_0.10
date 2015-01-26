@@ -3,7 +3,7 @@
 ##############################################################################
 # TODO: change libgstplugin.la to something else, e.g. libmysomething.la     #
 ##############################################################################
-plugin_LTLIBRARIES = libgstplugin.la
+plugin_LTLIBRARIES = libgstframecount.la
 
 ##############################################################################
 # TODO: for the next set of variables, name the prefix if you named the .la, #
@@ -14,13 +14,13 @@ plugin_LTLIBRARIES = libgstplugin.la
 ##############################################################################
 
 # sources used to compile this plug-in
-libgstplugin_la_SOURCES = gstplugin.c gstplugin.h
+libgstframecount_la_SOURCES = gstframecount.c gstframecount.h
 
 # compiler and linker flags used to compile this plugin, set in configure.ac
-libgstplugin_la_CFLAGS = $(GST_CFLAGS)
-libgstplugin_la_LIBADD = $(GST_LIBS)
-libgstplugin_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS)
-libgstplugin_la_LIBTOOLFLAGS = --tag=disable-static
+libgstframecount_la_CFLAGS = $(GST_CFLAGS)
+libgstframecount_la_LIBADD = $(GST_LIBS)
+libgstframecount_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS)
+libgstframecount_la_LIBTOOLFLAGS = --tag=disable-static
 
 # headers we need but don't want installed
-noinst_HEADERS = gstplugin.h
+noinst_HEADERS = gstframecount.h
